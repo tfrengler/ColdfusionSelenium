@@ -1,0 +1,80 @@
+RESPONSES:
+
+General OK
+{
+    value:
+    {
+
+    }
+}
+General NOK:
+{
+    value:
+    {
+        error: string
+        message: string
+        stacktrace: string
+    }
+}
+
+NewSession: { capabilities: object } Capabilities.cfc
+DeleteSession: N/A
+Status: N/A
+GetTimeouts: N/A
+SetTimeouts:  Timeouts.cfc
+NavigateTo: { url: string }
+GetCurrentURL: N/A
+Back
+Forward
+Refresh
+GetTitle
+GetWindowHandle: // window-fcc6-11e5-b4f8-330a88ab9d7f
+CloseWindow
+SwitchToWindow { handle: string }
+GetWindowHandles { handles: string[] }
+NewWindow
+SwitchToFrame: { id: null/number/elementID }
+SwitchToParentFrame
+GetWindowRect
+SetWindowRect { width: null/number, height: null/number, x: null/number, y: null/number }
+MaximizeWindow
+MinimizeWindow
+FullscreenWindow
+GetActiveElement
+GetElementShadowRoot
+FindElement { using: enum/string, value: string }
+FindElements
+FindElementFromElement
+FindElementsFromElement
+FindElementFromShadowRoot
+FindElementsFromShadowRoot
+IsElementSelected
+GetElementAttribute
+GetElementProperty
+GetElementCSSValue
+GetElementText
+GetElementTagName
+GetElementRect
+IsElementEnabled
+GetComputedRole
+GetComputedLabel
+ElementClick
+ElementClear
+ElementSendKeys
+GetPageSource
+ExecuteScript
+ExecuteAsyncScript
+GetAllCookies
+GetNamedCookie
+AddCookie
+DeleteCookie
+DeleteAllCookies
+PerformActions
+ReleaseActions
+DismissAlert
+AcceptAlert
+GetAlertText
+SendAlertText
+TakeScreenshot
+TakeElementScreenshot
+PrintPage
