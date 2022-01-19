@@ -1,19 +1,9 @@
 <cfscript>
 
-Test = new Capabilities();
-writeDump( WebdriverCommandRepository::NewSession(Test) );
-writeDump( WebdriverCommandRepository::NavigateTo("http://localhost") );
+Test = new http(method = "GET", charset = "utf-8", url = "http://frenglerslair.nl/");
+Test.addParam(name = "q", type = "url", value = "cfml");
+Result = result = Test.send();
 
+writeDump(Result.getPrefix());
 
-/*
-    Implementer create command param string using WebdriverCommandRepository methods
-    Implementer instantiates new Command(), passing in sessionID and params from above (optionally elementid)
-    Implementer passes command to CommandProcessor
-    CommandProcessor creates an HTTP request based on Command-data
-    - Fetch request uri and method from CommandInfo
-    - Interpolate session id and optionally element id in request uri
-    CommandProcessor sends request to webdriver request uri
-    CommandProcessor receives and and reads response
-    CommandProcessor returns response string Implementer???
-*/
 </cfscript>

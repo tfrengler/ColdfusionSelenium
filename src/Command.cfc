@@ -1,7 +1,7 @@
 <cfcomponent output="false" modifier="final" accessors="false" persistent="true" >
 
     <cfproperty name="name"       type="string" getter="true" setter="false" />
-    <cfproperty name="parameters" type="CommandParameters" getter="true" setter="false" />
+    <cfproperty name="parameters" type="CommandParameters" getter="false" setter="false" />
     <cfproperty name="sessionID"  type="string" getter="true" setter="false" />
     <cfproperty name="elementID"  type="string" getter="true" setter="false" />
 
@@ -17,5 +17,14 @@
             variables.sessionID = arguments.sessionID;
             variables.elementID = arguments.elementID;
         </cfscript>
+    </cffunction>
+
+    <cffunction name="ResolveURL" returntype="string" access="public" output="false" >
+        <cfargument name="requestPath" type="string" required="true" output="false" default="" />
+
+    </cffunction>
+
+    <cffunction name="GetBody" returntype="string" access="public" output="false" >
+        <cfreturn variables.parameters.GetBody() />
     </cffunction>
 </cfcomponent>
